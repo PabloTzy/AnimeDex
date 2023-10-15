@@ -1,1 +1,536 @@
-<iframe src="/tools/ajax/dstat/L7/graph?ip=88.198.48.45&amp;title=false" height="480" width="100%" id="graph"></iframe>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>Vedbex: Live Dstat Graph</title>
+  <meta charset="utf-8"> 
+  <meta name="title" content="Vedbex: Live Dstat Graph">
+  <meta name="description" content="Layer4 and Layer7 dstat graph displays the incoming megabits per second for specific ip address">
+  <meta name="keywords" content="layer4,l4,layer4 dstat,dstat,graph,layer7,layer7 dstat,ddos,monitor">
+  <meta name="author" content="Vedbex">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico?refresh"/>
+
+  <!-- apps -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.vedbex.com/dstat/layer7/88.198.48.45">
+  <meta property="og:title" content="Vedbex: Live Dstat Graph">
+  <meta property="og:description" content="Layer4 and Layer7 dstat graph displays the incoming megabits per second for specific ip address">
+
+  <meta property="twitter:url" content="https://www.vedbex.com/dstat/layer7/88.198.48.45">
+  <meta property="twitter:title" content="Vedbex: Live Dstat Graph">
+  <meta property="twitter:description" content="Layer4 and Layer7 dstat graph displays the incoming megabits per second for specific ip address">
+
+
+  <!-- styles -->
+  <link rel="stylesheet" href="/tools/assets/css/gfonts.css">
+    <link rel="stylesheet" href="/tools/assets/css/light/vendor.min.css">
+  <link rel="stylesheet" href="/tools/assets/css/light/main.css">
+  <link rel="stylesheet" href="/tools/assets/css/light/application.min.css">
+  <link rel="stylesheet" href="/tools/assets/css/styles.css?0.0.6">
+
+  <!-- scripts -->
+  <script src="/tools/assets/js/sysved.js"></script>
+  <script src="/tools/assets/js/vendor_1_9.min.js"></script>
+  <script src="/tools/assets/js/ad.js?1"></script>
+  <script src="/tools/assets/js/jquery-min-1.0.4.js"></script>
+  </head>
+  <body class="layout layout-header-fixed layout-sidebar-fixed layout-footer-fixed">
+    <div id="self_des" style="display: none;">Layer4 and Layer7 dstat graph displays the incoming megabits per second for specific ip address</div>
+    <div class="layout-header">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a class="navbar-brand navbar-brand-center" href="/home">
+            <img class="navbar-brand-logo" src="/tools/assets/images/logo.png">
+          </a>
+          <button class="navbar-toggler visible-xs-block collapsed" type="button" data-toggle="collapse" data-target="#sidenav">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="bars">
+              <span class="bar-line bar-line-1 out"></span>
+              <span class="bar-line bar-line-2 out"></span>
+              <span class="bar-line bar-line-3 out"></span>
+            </span>
+            <span class="bars bars-x">
+              <span class="bar-line bar-line-4"></span>
+              <span class="bar-line bar-line-5"></span>
+            </span>
+          </button>
+          <button class="navbar-toggler visible-xs-block collapsed" type="button" data-toggle="collapse" data-target="#navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="arrow-up"></span>
+            <span class="ellipsis ellipsis-vertical">
+            <img class="ellipsis-object" width="32" height="32" src="/tools/assets/images/user.png"></span>
+          </button>
+        </div>
+        <div class="navbar-toggleable">
+          <nav id="navbar" class="navbar-collapse collapse">
+            <button class="sidenav-toggler hidden-xs" title="Collapse sidenav" aria-expanded="true" type="button">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="bars">
+                <span class="bar-line bar-line-1 out"></span>
+                <span class="bar-line bar-line-2 out"></span>
+                <span class="bar-line bar-line-3 out"></span>
+                <span class="bar-line bar-line-4 in"></span>
+                <span class="bar-line bar-line-5 in"></span>
+                <span class="bar-line bar-line-6 in"></span>
+              </span>
+            </button>
+            <ul class="nav navbar-nav navbar-right"> 
+              <li class="dropdown">
+                <a class="dropdown-toggle" id="theme" style="cursor: pointer;">
+                  <span class="icon-with-child hidden-xs">
+                    <span class="icon icon-retweet icon-lg"></span> Dark Mode                  </span>
+                  <span class="visible-xs-block">
+                    <span class="icon icon-retweet icon-lg icon-fw"></span>
+                                        Dark Mode                  </span>
+                </a>
+              </li>
+              <li class="dropdown">
+                <a id="support" class="dropdown-toggle" style="cursor: pointer;">
+                  <span class="icon-with-child hidden-xs">
+                    <span class="icon icon-envelope-o icon-lg"></span> Contact
+                  </span>
+                  <span class="visible-xs-block">
+                    <span class="icon icon-envelope-o icon-lg icon-fw"></span>
+                    Contact us
+                  </span>
+                </a>
+              </li>
+              <li class="dropdown ">
+                <a class="dropdown-toggle" href="/legal">
+                  <span class="icon-with-child hidden-xs">
+                    <span class="icon icon-book icon-lg"></span> Terms
+                  </span>
+                  <span class="visible-xs-block">
+                    <span class="icon icon-book icon-lg icon-fw"></span>
+                    TOS And FAQ
+                  </span>
+                </a>
+              </li>
+              <li class="dropdown ">
+                <a class="dropdown-toggle" href="/status">
+                  <span class="icon-with-child hidden-xs">
+                    <span class="icon icon-cog icon-lg"></span> Status
+                  </span>
+                  <span class="visible-xs-block">
+                    <span class="icon icon-cog icon-lg icon-fw"></span>
+                    API Statistics
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="layout-main">
+      <div class="layout-sidebar">
+        <div class="layout-sidebar-backdrop"></div>
+        <div class="layout-sidebar-body">
+          <div class="custom-scrollbar sticky-scrollbar">
+            <nav id="sidenav" class="sidenav-collapse collapse">
+              <ul class="sidenav">
+                <li class="sidenav-search hidden-md hidden-lg">
+                  <form class="sidenav-form" action="/">
+                    <div class="form-group form-group-sm">
+                      <div class="input-with-icon">
+                        <input class="form-control" type="text" placeholder="Search">
+                        <span class="icon icon-search input-icon"></span>
+                      </div>
+                    </div>
+                  </form>
+                </li>
+                <li class="sidenav-heading">Web tools</li>
+                <li class="sidenav-item ">
+                  <a href="/traceroute">
+                    <span class="sidenav-icon icon icon-circle-thin"></span>
+                    <span class="sidenav-label">IP Traceroute</span>
+                  </a>
+                </li>
+                <li class="sidenav-item ">
+                  <a href="/ping">
+                    <span class="sidenav-icon icon icon-signal"></span>
+                    <span class="sidenav-label">Ping Address</span>
+                  </a>
+                </li>
+                <li class="sidenav-item ">
+                  <a href="/dns">
+                    <span class="sidenav-icon icon icon-refresh"></span>
+                    <span class="sidenav-label">DNS Resolver</span>
+                  </a>
+                </li>
+                <li class="sidenav-item ">
+                  <a href="/whois">
+                    <span class="sidenav-icon icon icon-database"></span>
+                    <span class="sidenav-label">Whois Lookup</span>
+                  </a>
+                </li>
+                <li class="sidenav-item ">
+                  <a href="/geoip">
+                    <span class="sidenav-badge badge badge-danger">New</span>
+                    <span class="sidenav-icon icon icon-map"></span>
+                    <span class="sidenav-label">IP Geolocation</span>
+                  </a>
+                </li>
+				<li class="sidenav-item ">
+                  <a href="/subdomain-finder">
+                    <span class="sidenav-icon icon icon-search"></span>
+                    <span class="sidenav-label">Subdomain BF</span>
+                  </a>
+                </li>
+               <li class="sidenav-heading">Skype tools</li>
+                <li class="sidenav-item ">
+                  <a href="/skyperesolver">
+                    <span class="sidenav-icon icon icon-skype"></span>
+                    <span class="sidenav-label">Skype Resolver</span>
+                  </a>
+                </li>
+                <li class="sidenav-item ">
+                  <a href="/email2skype">
+                    <span class="sidenav-icon icon icon-envelope"></span>
+                    <span class="sidenav-label">Email to Skype</span>
+                  </a>
+                </li>
+                <li class="sidenav-item ">
+                  <a href="/phone2skype">
+                    <span class="sidenav-icon icon icon-phone"></span>
+                    <span class="sidenav-label">Phone to Skype</span>
+                  </a>
+                </li>
+                <li class="sidenav-heading">Advanced tools</li>
+                <li class="sidenav-item">
+                  <a href="https://zetsal.com" target="_blank">
+                    <span class="sidenav-badge badge badge-success">Free</span>
+                    <span class="sidenav-icon icon icon-plug"></span>
+                    <span class="sidenav-label">Secured VPN(s)</span>
+                  </a>
+                </li>
+                <li class="sidenav-item active">
+                  <a href="/dstat">
+                    <span class="sidenav-badge badge badge-danger">New</span>
+                    <span class="sidenav-icon icon icon-bar-chart"></span>
+                    <span class="sidenav-label">Live Dstat Graph</span>
+                  </a>
+                </li>
+               <li class="sidenav-heading">Other tools</li>
+                <li class="sidenav-item ">
+                  <a href="/speedtest">
+                    <span class="sidenav-icon icon icon-feed"></span>
+                    <span class="sidenav-label">Bandwidth Test</span>
+                  </a>
+                </li>
+                <li class="sidenav-item ">
+                  <a href="/tempmail">
+                    <span class="sidenav-icon icon icon-envelope"></span>
+                    <span class="sidenav-label">Temporary Mail</span>
+                  </a>
+                </li>
+                <li class="sidenav-item ">
+                  <a href="/fakeproof">
+                    <span class="sidenav-icon icon icon-photo"></span>
+                    <span class="sidenav-label">FakeProof Maker</span>
+                  </a>
+                </li>
+                <li class="sidenav-item ">
+                  <a href="/covid">
+                    <span class="sidenav-icon icon icon-bug"></span>
+                    <span class="sidenav-label">Coronavirus Live</span>
+                  </a>
+                </li>
+               <li class="sidenav-heading">Steam tools</li>
+                <li class="sidenav-item ">
+                  <a href="/steamid">
+                    <span class="sidenav-icon icon icon-steam-square"></span>
+                    <span class="sidenav-label">SteamID Finder</span>
+                  </a>
+                </li>
+                <li class="sidenav-item ">
+                  <a href="/csgo-cheatest">
+                    <span class="sidenav-icon icon icon-steam-square"></span>
+                    <span class="sidenav-label">CSGO Cheatest</span>
+                  </a>
+                </li>
+                <li class="sidenav-item ">
+                  <a href="/csgo-reportbot">
+                    <span class="sidenav-icon icon icon-steam-square"></span>
+                    <span class="sidenav-label">CSGO Reportbot</span>
+                  </a>
+                </li>
+               <li class="sidenav-heading">General tools</li>
+                <li class="sidenav-item ">
+                  <a href="/bip70decoder">
+                    <span class="sidenav-icon icon icon-bitcoin"></span>
+                    <span class="sidenav-label">Bitpay Decoder</span>
+                  </a>
+                </li>	
+                <li class="sidenav-item ">
+                  <a href="/website-ranking">
+                    <span class="sidenav-icon icon icon-globe"></span>
+                    <span class="sidenav-label">Websites Rank</span>
+                  </a>
+                </li>
+                <li class="sidenav-item ">
+                  <a href="/hash-identifier">
+                    <span class="sidenav-icon icon icon-hashtag"></span>
+                    <span class="sidenav-label">Hash identifier</span>
+                  </a>
+                </li>	
+                <li class="sidenav-item ">
+                  <a href="/hash-generator">
+                    <span class="sidenav-icon icon icon-hashtag"></span>
+                    <span class="sidenav-label">Hash Generator</span>
+                  </a>
+                </li>	
+                <li class="sidenav-item ">
+                  <a href="/tools/getstrafter">
+                    <span class="sidenav-icon icon icon-file-text-o"></span>
+                    <span class="sidenav-label">Get String After</span>
+                  </a>
+                </li>	
+                <li class="sidenav-item ">
+                  <a href="/tools/getstrbefore">
+                    <span class="sidenav-icon icon icon-file-text-o"></span>
+                    <span class="sidenav-label">Get String Before</span>
+                  </a>
+                </li>	
+                <li class="sidenav-item ">
+                  <a href="/tools/getstrbetween">
+                    <span class="sidenav-icon icon icon-file-text-o"></span>
+                    <span class="sidenav-label">Get String Between</span>
+                  </a>
+                </li>	
+                <li class="sidenav-item ">
+                  <a href="/tools/remove_duplicate_lines">
+                    <span class="sidenav-icon icon icon-file-text-o"></span>
+                    <span class="sidenav-label">Del Duplicate Lines</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="layout-content">
+        <div class="layout-content-body">
+          <div class="title-bar">
+           <div class="row gutter-xs">
+            <div class="col-md-6 col-lg-3 col-lg-push-0">
+              <div class="card">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-middle media-left">
+                      <span class="bg-primary circle sq-48">
+                        <span class="icon icon-user"></span>
+                      </span>
+                    </div>
+                    <div class="media-middle media-body">
+                      <h6 class="media-heading">Visitors</h6>
+                      <h3 class="media-heading">
+                        <span class="fw-l">726.586</span>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 col-lg-pull-0">
+              <div class="card">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-middle media-left">
+                      <span class="bg-danger circle sq-48">
+                        <span class="icon icon-database"></span>
+                      </span>
+                    </div>
+                    <div class="media-middle media-body">
+                      <h6 class="media-heading">Leaked Database</h6>
+                      <h3 class="media-heading">
+                        <span class="fw-l">249.926M</span>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 col-lg-push-0">
+              <div class="card">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-middle media-left">
+                      <span class="bg-info circle sq-48">
+                        <span class="icon icon-skype"></span>
+                      </span>
+                    </div>
+                    <div class="media-middle media-body">
+                      <h6 class="media-heading">Skype Resolves</h6>
+                      <h3 class="media-heading">
+                        <span class="fw-l">229.291</span>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 col-lg-pull-0">
+              <div class="card">
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-middle media-left">
+                      <span class="bg-success circle sq-48">
+                        <span class="icon icon-server"></span>
+                      </span>
+                    </div>
+                    <div class="media-middle media-body">
+                      <h6 class="media-heading">Global Usage</h6>
+                      <h3 class="media-heading">
+                        <span class="fw-l">82.587.748</span>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<div id="adbi"></div>          <div class="row gutter-xs card card-body" style="margin: auto 0mm 2.8mm; width: 100%;">
+           <div class="col-xs-6 col-md-3">
+             <a id="t1" style="cursor: pointer;" data-lk="sun-stresser.com"><img src="/tools/assets/images/img/p2_ss.gif" style="max-width: 100%;max-height: 100%;" height="60px" width="468px"></a>                   </div>
+           <div class="col-xs-6 col-md-3">
+             <a id="t2" style="cursor: pointer;" data-lk="nightmarestresser.net/?ref=vedbex"><img src="/tools/assets/images/img/p4_nm2.gif" style="max-width: 100%;max-height: 100%;" height="60px" width="468px"></a>                   </div> 
+           <div class="col-xs-6 col-md-3">
+             <a id="t3" style="cursor: pointer;" data-lk="stresslab.cc"><img src="/tools/assets/images/img/b1_sx.gif" style="max-width: 100%;max-height: 100%;" height="60px" width="468px"></a>                   </div>
+           <div class="col-xs-6 col-md-3">
+             <a id="t4" style="cursor: pointer;" data-lk="webstress.app"><img src="/tools/assets/images/img/t4_ws.gif" style="max-width: 100%;max-height: 100%;" height="60px" width="468px"></a>                   </div>
+           </div>         <div class="row gutter-xs">
+           <div class="col-md-3">
+              <ul class="list-group">
+                <a class="list-group-item active">
+                  <span class="icon icon-list icon-lg icon-fw"></span>
+                  Layer7
+                </a>
+                <a class="list-group-item" href="#" onclick="setgraph('/tools/ajax/dstat/L7/graph?ip=37.187.56.77','OVH Graph at http://37.187.56.77'); history.replaceState({urlPath:'/dstat/layer7/37.187.56.77'},'','/dstat/layer7/37.187.56.77'); return false;"><span class="icon icon-caret-right icon-lg icon-fw"></span>
+                      OVH 
+                     </a><a class="list-group-item" href="#" onclick="setgraph('/tools/ajax/dstat/L7/graph?ip=91.193.113.71','SUSE Graph at http://91.193.113.71'); history.replaceState({urlPath:'/dstat/layer7/91.193.113.71'},'','/dstat/layer7/91.193.113.71'); return false;"><span class="icon icon-caret-right icon-lg icon-fw"></span>
+                      SUSE 
+                     </a><a class="list-group-item" href="#" onclick="setgraph('/tools/ajax/dstat/L7/graph?ip=46.166.142.81','NFOrce Graph at http://46.166.142.81'); history.replaceState({urlPath:'/dstat/layer7/46.166.142.81'},'','/dstat/layer7/46.166.142.81'); return false;"><span class="icon icon-caret-right icon-lg icon-fw"></span>
+                      NFOrce 
+                     </a><a class="list-group-item" href="#" onclick="setgraph('/tools/ajax/dstat/L7/graph?ip=88.198.48.45','Hetzner Graph at http://88.198.48.45'); history.replaceState({urlPath:'/dstat/layer7/88.198.48.45'},'','/dstat/layer7/88.198.48.45'); return false;"><span class="icon icon-caret-right icon-lg icon-fw"></span>
+                      Hetzner 
+                     </a><a class="list-group-item" href="#" onclick="setgraph('/tools/ajax/dstat/L7/graph?ip=50.7.232.90','Cogent Graph at http://50.7.232.90'); history.replaceState({urlPath:'/dstat/layer7/50.7.232.90'},'','/dstat/layer7/50.7.232.90'); return false;"><span class="icon icon-caret-right icon-lg icon-fw"></span>
+                      Cogent 
+                     </a>              </ul>
+
+              <ul class="list-group">
+                <a class="list-group-item active">
+                  <span class="icon icon-list icon-lg icon-fw"></span>
+                  Layer4 <span class="sidenav-badge badge badge-danger" style="margin-top:3px;background-color:#e74c3c;color:white;">NEW</span>
+                </a>
+                <a class="list-group-item" href="#" onclick="setgraph('/tools/ajax/dstat/L4/graph_custom?ip=178.32.119.243','OVH Unfiltered (17 Tbps) Graph at 178.32.119.243'); history.replaceState({urlPath:'/dstat/layer4/178.32.119.243'},'','/dstat/layer4/178.32.119.243'); return false;"><span class="icon icon-caret-right icon-lg icon-fw"></span>
+                    OVH Unfiltered (17 Tbps) <span class="sidenav-badge badge badge-success" style="margin-top:3px;background-color:#35cf76;color:white;padding:5px;"><i class="fa-solid fa-circle"></i></span>
+                    </a><a class="list-group-item" href="#" onclick="setgraph('/tools/ajax/dstat/L4/graph_custom?ip=147.75.85.57','Equinix (20 Gbps) Graph at 147.75.85.57'); history.replaceState({urlPath:'/dstat/layer4/147.75.85.57'},'','/dstat/layer4/147.75.85.57'); return false;"><span class="icon icon-caret-right icon-lg icon-fw"></span>
+                    Equinix (20 Gbps) <span class="sidenav-badge badge badge-success" style="margin-top:3px;background-color:#35cf76;color:white;padding:5px;"><i class="fa-solid fa-circle"></i></span>
+                    </a><a class="list-group-item" href="#" onclick="setgraph('/tools/ajax/dstat/L4/graph_custom?ip=136.144.49.99','PacketHostDE (20 Gbps) Graph at 136.144.49.99'); history.replaceState({urlPath:'/dstat/layer4/136.144.49.99'},'','/dstat/layer4/136.144.49.99'); return false;"><span class="icon icon-caret-right icon-lg icon-fw"></span>
+                    PacketHostDE (20 Gbps) <span class="sidenav-badge badge badge-success" style="margin-top:3px;background-color:#35cf76;color:white;padding:5px;"><i class="fa-solid fa-circle"></i></span>
+                    </a><a class="list-group-item" href="#" onclick="setgraph('/tools/ajax/dstat/L4/graph_custom?ip=145.40.68.93','PacketHostNL (20 Gbps) Graph at 145.40.68.93'); history.replaceState({urlPath:'/dstat/layer4/145.40.68.93'},'','/dstat/layer4/145.40.68.93'); return false;"><span class="icon icon-caret-right icon-lg icon-fw"></span>
+                    PacketHostNL (20 Gbps) <span class="sidenav-badge badge badge-success" style="margin-top:3px;background-color:#35cf76;color:white;padding:5px;"><i class="fa-solid fa-circle"></i></span>
+                    </a><a class="list-group-item" href="#" onclick="setgraph('/tools/ajax/dstat/L4/graph_custom?ip=38.154.238.194','ServerMania (10 Gbps) Graph at 38.154.238.194'); history.replaceState({urlPath:'/dstat/layer4/38.154.238.194'},'','/dstat/layer4/38.154.238.194'); return false;"><span class="icon icon-caret-right icon-lg icon-fw"></span>
+                    ServerMania (10 Gbps) <span class="sidenav-badge badge badge-success" style="margin-top:3px;background-color:#35cf76;color:white;padding:5px;"><i class="fa-solid fa-circle"></i></span>
+                    </a><a class="list-group-item" href="#" onclick="setgraph('/tools/ajax/dstat/L4/graph_custom?ip=89.187.173.102','Datacamp (10 Gbps) Graph at 89.187.173.102'); history.replaceState({urlPath:'/dstat/layer4/89.187.173.102'},'','/dstat/layer4/89.187.173.102'); return false;"><span class="icon icon-caret-right icon-lg icon-fw"></span>
+                    Datacamp (10 Gbps) <span class="sidenav-badge badge badge-success" style="margin-top:3px;background-color:#35cf76;color:white;padding:5px;"><i class="fa-solid fa-circle"></i></span>
+                    </a>
+                              </ul>
+			  <div id="abm"></div>
+            </div>
+            <div class="col-md-9">
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-actions">
+                  </div>
+                  <strong id="name">Preview</strong>
+                </div>
+                <div class="card-body">
+                 <div class="row gutter-xs">
+                  <div class="col-xs-12 col-md-12">
+                      <div id="dstatframe"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+         </div>
+		 <script>
+	       if (typeof blocked == 'undefined') {
+	     	  document.getElementById("abm").innerHTML = '<span style="color:red">Disable your <b>Adblock</b> because it has deleted some elements like links and buttons.</span>';
+	       }
+	     </script>
+         <script>
+         function setgraph(url, content){
+            document.getElementById("name").innerHTML= content;
+            document.getElementById('graph').src = url + '&title=false';
+         }
+         </script>
+         <script>
+            var iframe = document.createElement('iframe');
+            iframe.src = "data:text/html,<center><span>Select Graph...<span></center>";
+            iframe.height = "480";
+            iframe.width = "100%";
+            iframe.setAttribute("id", "graph");
+            document.getElementById("dstatframe").appendChild(iframe);
+         </script>
+         <script>setgraph('/tools/ajax/dstat/L7/graph?ip=88.198.48.45','Hetzner Graph at http://88.198.48.45');</script>          <div class="row gutter-xs card card-body" style="margin: auto 0mm 2.8mm; width: 100%;">
+          <div class="col-xs-6 col-md-3">
+            <a id="b1" style="cursor: pointer;" data-lk="zdstresser.net"><img src="/tools/assets/images/img/p1_zd.gif" style="max-width: 100%;max-height: 100%;" height="60px" width="468px"></a>          </div> 
+          <div class="col-xs-6 col-md-3">
+            <a id="b2" style="cursor: pointer;" data-lk="serverdown.cc"><img src="/tools/assets/images/img/b2_us.gif" style="max-width: 100%;max-height: 100%;" height="60px" width="468px"></a>           </div>
+           <div class="col-xs-6 col-md-3">
+            <a id="b3" style="cursor: pointer;" data-lk="darkvr.io"><img src="/tools/assets/images/img/b3_di.gif" style="max-width: 100%;max-height: 100%;" height="60px" width="468px"></a>   
+           </div> 
+           <div class="col-xs-6 col-md-3">
+            <a id="b4" style="cursor: pointer;" data-lk="silentstress.cc/?vedbex"><img src="/tools/assets/images/img/b4_ss3.gif" style="max-width: 100%;max-height: 100%;" height="60px" width="468px"></a>           </div>
+           </div> 
+           <small style="font-size:11px;text-align:center;">* The above flashsing banners are advertisement and we are not affiliated with any of them and cannot be held responsible for anything.</small>
+         </div>
+        </div>
+      </div>
+      <div id="pasos" tabindex="-1" role="dialog" class="modal fade">
+      <div class="modal-dialog"> 
+        <div class="modal-content">
+          <div class="modal-header bg-primary">
+            <button type="button" class="close" data-dismiss="modal">
+              <span style="color:white;" aria-hidden="true">&times;</span>
+              <span class="sr-only">Close</span>
+            </button>
+            <h4 class="modal-title">Advertisement</h4>
+          </div>
+          <div class="modal-body">
+		       <div style="margin-bottom:5px;"><center><a id="p1" style="cursor: pointer;" data-lk="zdstresser.net"><img src="/tools/assets/images/img/p1_zd.gif" style="max-width: 100%;max-height: 100%;" height="60px" width="468px"></a></center></div>
+		       <div style="margin-bottom:5px;"><center><a id="p2" style="cursor: pointer;" data-lk="sun-stresser.com"><img src="/tools/assets/images/img/p2_ss.gif" style="max-width: 100%;max-height: 100%;" height="60px" width="468px"></a></center></div>
+		       <div style="margin-bottom:5px;"><center><a id="p3" style="cursor: pointer;" data-lk="ddg.lol"><img src="/tools/assets/images/img/p3_dz.gif" style="max-width: 100%;max-height: 100%;" height="60px" width="468px"></a></center></div>			   
+		       <div style="margin-bottom:5px;"><center><a id="p4" style="cursor: pointer;" data-lk="nightmarestresser.net/?ref=vedbex"><img src="/tools/assets/images/img/p4_nm2.gif" style="max-width: 100%;max-height: 100%;" height="60px" width="468px"></a></center></div>			   
+			     <div style="margin-bottom:5px;"><center><a id="p5" style="cursor: pointer;" data-lk="silentstress.cc/?vedbex"><img src="/tools/assets/images/img/b4_ss3.gif" style="max-width: 100%;max-height: 100%;" height="60px" width="468px"></a></center></div>			   
+			     <div style="margin-bottom:5px;"><center><a id="p6" style="cursor: pointer;" data-lk="silentstress.cc/?vedbex"><img src="/tools/assets/images/img/p6_wt2.gif" style="max-width: 100%;max-height: 100%;" height="60px" width="468px"></a></center></div>			   
+			     <div><center><a id="p7" style="cursor: pointer;" data-lk="serverdown.cc"><img src="/tools/assets/images/img/b2_us.gif" style="max-width: 100%;max-height: 100%;" height="60px" width="468px"></a></center></div>	
+          </div>
+          <div class="modal-footer" style="padding: 1rem;">
+            <button class="btn btn-primary" data-dismiss="modal" type="button">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="layout-footer">
+        <div class="layout-footer-body">
+          <small class="version">Version 1.9.0</small>
+          <small class="copyright">&copy; 2017 - 2023. Vedbex.com All rights reserved</small>
+        </div>
+      </div>
+    </div>
+    <script>
+		var b_theme = document.getElementById("theme");
+	    if (b_theme){ b_theme.addEventListener("click", function(){ theme(2) }, false); }
+	</script>
+	<script src="/tools/assets/js/utils.js?v1"></script>
+	<script src="/tools/assets/js/main_1_9.min.js"></script>
+    <script src="/tools/assets/js/application_1_9.min.js?v9"></script>
+  </body>
+</html>
