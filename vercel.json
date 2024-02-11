@@ -3,11 +3,6 @@
     {
       "source": "/:path*",
       "destination": "/:path*.html"
-    },
-    {
-      "source": "/(.*)",
-      "status": 503,
-      "destination": "/maintenance.html"
     }
   ]
 }
