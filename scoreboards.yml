@@ -35,6 +35,8 @@ simple:
     - '&6CPU: &f%server_cpu_usage%'
     - '&6Ping Server: &f%server_ping%'
     - '&e----------------------'
+  updateTime: 20
+  renderTime: 10
     
 updates:
   player:
