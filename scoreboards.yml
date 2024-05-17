@@ -1,4 +1,4 @@
-# Scoreboards (https://github.com/r4g3baby/SimpleScore/blob/main/src/main/resources/scoreboards.yml)
+## Scoreboards (https://github.com/r4g3baby/SimpleScore/blob/main/src/main/resources/scoreboards.yml)
 # This is where you create your scoreboards to be displayed.
 
 # You can create a scoreboard by creating a node with the scoreboard name and then specifying a default "updateTime",
@@ -22,48 +22,18 @@
 
 # This is a simple scoreboard with only the top and bottom lines animated
 simple:
-  enabled: true
   title: '&6&lPractice PvP'
-  lines:
-    - '&e----------------------'
-    - '&6Nama: &f%player_name%'
-    - '&6Ping: &f%player_ping%'
-    - '&6K.D.A: &f%player_kills% / %player_deaths% / %player_assists%'
-    - ''
-    - '&6TPS: &f%server_tps%'
-    - '&6Online: &f%server_online%'
-    - '&6CPU: &f%server_cpu_usage%'
-    - '&6Ping Server: &f%server_ping%'
-    - '&e----------------------'
-  updateTime: 20
-  renderTime: 10
-    
-updates:
-  player:
-    ping: 1
-    name: 1
-    kills: 1
-    deaths: 1
-    assists: 1
-  server:
-    tps: 1
-    online: 1
-    cpu: 1
-    ping: 1
-
-placeholders:
-  enabled: true
-  player:
-    name: '%player_name%'
-    ping: '%player_ping%'
-    kills: '%player_kills%'
-    deaths: '%player_deaths%'
-    assists: '%player_assists%'
-  server:
-    tps: '%server_tps%'
-    online: '%server_online%'
-    cpu: '%server_cpu_usage%'
-    ping: '%server_ping%'
+  scores:
+    10: '&e----------------------'
+    9: '&6Nama: &f%player_name%'
+    8: '&6Ping: &f%player_ping%'
+    7: '&6K.D.A: &f%player_kills% / %player_deaths% / %player_assists%'
+    6: ''
+    5: '&6TPS: &f%tps%'
+    4: '&6Online: &f%server_online%'
+    3: '&6CPU: &f%cpu_usage%'
+    2: '&6Ping Server: &f%server_ping%'
+    1: '&e----------------------'
 
 # Scoreboard with a basic timing example
 customTiming:
@@ -120,22 +90,3 @@ conditional:
           - '&7passed the &8isTheEnd &7condition but..'
           - '&7didn''t pass the &8isOverworld &7condition.'
         else: '&7You didn''t pass any of the conditions.'
-        1: ''
-  
-# Practice PvP scoreboard
-practicePvP:
-  updateTime: 20
-  renderTime: 10
-  titles: '&6&lPractice PvP'
-  scores:
-    13:
-      - '&e----------------------'
-      - '&6Nama: &f%player_name%'
-      - '&6Ping: &f%player_ping%'
-      - '&6K.D.A: &f%player_kills% / %player_deaths% / %player_assists%'
-      - ''
-      - '&6TPS: &f%server_tps%'
-      - '&6Online: &f%server_online%'
-      - '&6CPU: &f%server_cpu_usage%'
-      - '&6Ping Server: &f%server_ping%'
-      - '&e----------------------'
