@@ -1,0 +1,37 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload MP3</title>
+</head>
+<body>
+  <h1>Upload MP3</h1>
+  <form id="uploadForm">
+    <input type="file" id="fileInput" accept=".mp3">
+    <button type="submit">Upload</button>
+  </form>
+  <div id="result"></div>
+
+  <script>
+    document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const fileInput = document.getElementById('fileInput');
+      const file = fileInput.files[0];
+
+      const formData = new FormData();
+      formData.append('mp3', file);
+
+      const response = await fetch('http://mango.fps.ms:26237/upload', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.json();
+      document.getElementById('result').innerHTML = `<a href="${result.url}">${result.url}</a>`;
+    });
+  </script>
+</body>
+</html>
