@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,13 +23,21 @@
       const formData = new FormData();
       formData.append('mp3', file);
 
-      const response = await fetch('http://mango.fps.ms:26237/upload', {
-        method: 'POST',
-        body: formData
-      });
+      try {
+        const response = await fetch('http://mango.fps.ms:26237/upload', {
+          method: 'POST',
+          body: formData
+        });
 
-      const result = await response.json();
-      document.getElementById('result').innerHTML = `<a href="${result.url}">${result.url}</a>`;
+        if (!response.ok) {
+          throw new Error('Upload failed');
+        }
+
+        const result = await response.json();
+        document.getElementById('result').innerHTML = `<a href="${result.url}">${result.url}</a>`;
+      } catch (error) {
+        document.getElementById('result').textContent = error.message;
+      }
     });
   </script>
 </body>
